@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function swapAnagrams(sentence) {
+    const words = sentence.split(' ');
+    const anagrams = {};
+
+
+    function sortLetters(word) {
+        return word.split('').sort().join('');
+    }
+
+    words.forEach((word, index) => {
+        const sortedWord = sortLetters(word.toLowerCase());
+        if (anagrams[sortedWord]) {
+            anagrams[sortedWord].push({ word, index });
+        } else {
+            anagrams[sortedWord] = [{ word, index }];
+        }
+    });
+
+
+    Object.values(anagrams).forEach(group => {
+        if (group.length > 1) {
+            for (let i = 0; i < group.length; i++) {
+                const nextIndex = (i + 1) % group.length;
+                words[group[i].index] = group[nextIndex].word;
+            }
+        }
+    });
+
+    return words.join(' ');
+}
+
+const sentence = prompt("Введите предложение:");
+const result = swapAnagrams(sentence);
+console.log(result);
+    </script>
+</body>
+</html>

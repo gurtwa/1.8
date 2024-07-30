@@ -1,0 +1,14 @@
+export const ExpectedMinutesInOven = 40;
+
+export function remainingMinutesInOven(actualMinutesInOven) {
+  return ExpectedMinutesInOven - actualMinutesInOven;
+}
+
+export function preparationTimeInMinutes(numberOfLayers) {
+  const preparationTimeInMinutes = 2;
+  return numberOfLayers * preparationTimeInMinutes;
+}
+
+export function totalTimeInMinutes(numberOfLayers, actualMinutesInOven) {
+  return preparationTimeInMinutes(numberOfLayers) + actualMinutesInOven;
+}

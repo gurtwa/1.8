@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function getSpringMeltStreak() {
+
+  let temperature = prompt("Введите значения средней температуры, разделенные пробелом:");
+
+  let temperatureArray = temperature.split(' ').map(Number);
+
+  let currentStreak = 0;
+  let maxStreak = 0;
+
+  for (let temp of temperatureArray) {
+    if (temp > 0) {
+      currentStreak++;
+      if (currentStreak > maxStreak) {
+        maxStreak = currentStreak;
+      }
+    } else {
+      currentStreak = 0;
+    }
+  }
+
+  console.log("Максимальная продолжительность оттепели: " + maxStreak);
+}
+
+getSpringMeltStreak();
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function validatePassword() {
+    let password = prompt("Введите пароль:");
+    if (password === null) { 
+        return false;
+    }
+    if (password.length < 7) {
+        return false;
+    }
+
+    let hasLowercase = false;
+    let hasUppercase = false;
+    let hasDigit = false;
+
+    for (let char of password) {
+        if (/[a-z]/.test(char)) {
+            hasLowercase = true;
+        } else if (/[A-Z]/.test(char)) {
+            hasUppercase = true;
+        } else if (/\d/.test(char)) {
+            hasDigit = true;
+        }
+        if (hasLowercase && hasUppercase && hasDigit) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+console.log(validatePassword()); 
+    </script>
+</body>
+</html>

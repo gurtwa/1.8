@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function isFibonacci() {
+
+    let value = parseInt(prompt('Введите число:'), 10);
+
+
+    if (isNaN(value) || value < 0) {
+        console.log('Некорректное число');
+        return undefined;
+    }
+
+    let a = 0;
+    let b = 1;
+    let index = 0;
+
+
+    while (a <= value) {
+        if (a === value) {
+            return index; 
+        }
+        let temp = a + b;
+        a = b;
+        b = temp;
+        index++;
+        console.log(`${index}`); 
+    }
+
+    return undefined;
+}
+
+isFibonacci();
+    </script>
+</body>
+</html>

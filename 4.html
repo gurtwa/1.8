@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function computeOrizurus() {
+
+let total=prompt("Введите сколько журавликов сделали дети");
+let orizurus=parseInt(total,10);  
+if (orizurus%6===0){
+let p=orizurus/6;
+  let k=p*4; 
+  console.log(`По итогу Петя сделал ${p}, Катя сделала ${k}, а Сережа ${p}`);}
+else {
+console.log("Ребята не могли сделать такое число журавликов");
+}
+}
+computeOrizurus();
+    </script>
+</body>
+</html>

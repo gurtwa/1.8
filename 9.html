@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function getTimeDelta() {
+   
+    function timeToSeconds(time) {
+        const [hours, minutes, seconds] = time.split(':').map(Number);
+        return hours * 3600 + minutes * 60 + seconds;
+    }
+
+    let x = prompt("Введите x (HH:MM:SS):");
+    let y = prompt("Введите y (HH:MM:SS):");
+
+    const secondsX = timeToSeconds(x);
+    const secondsY = timeToSeconds(y);
+
+    const result = secondsY - secondsX;
+    console.log(`Разница в секундах: ${result}`);
+}
+
+getTimeDelta();
+    </script>
+</body>
+</html>

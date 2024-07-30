@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function checkBusTour() {
+   
+   let bridges = prompt("Введи высоту мостов через запятую");
+   
+   let bridgesString = bridges.split(',');
+
+   let bridgesNumbers = bridgesString.map(Number);
+
+   const most = bridgesNumbers.filter(function(number){ 
+       return number > 512;
+   });
+
+   most.forEach((value, index) => {
+        console.log(`Мост ${index + 1}: ${value}`);
+    });
+}
+
+checkBusTour();
+    </script>
+</body>
+</html>

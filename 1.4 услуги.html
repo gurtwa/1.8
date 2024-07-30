@@ -1,0 +1,21 @@
+export function dayRate(ratePerHour) {
+    return ratePerHour * 8;
+  }
+
+  export function daysInBudget(budget, ratePerHour) {
+    const dayRateAmount = dayRate(ratePerHour);
+    return Math.floor(budget / dayRateAmount);
+  }
+  
+  export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
+    const dayRateAmount = dayRate(ratePerHour);
+    const fullMonths = Math.floor(numDays / 22);
+    const remainingDays = numDays % 22;
+  
+    const discountRate = 1 - discount;
+    const costForFullMonths = fullMonths * 22 * dayRateAmount * discountRate;
+    const costForRemainingDays = remainingDays * dayRateAmount;
+  
+    const totalCost = costForFullMonths + costForRemainingDays;
+    return Math.ceil(totalCost);
+  }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function isIpValid() {
+
+    
+    let adress = prompt("введите сообщение");
+    
+    let adressIpArr = adress.split('.');
+    
+    const  adressIp= adressIpArr.map(function(char) {
+        let index = adressIp.indexOf(char);
+        if (adressIpArr.lenght > 4) {
+           if (char.lenght>256){
+            console.log('false');
+        }
+        return char;
+        }
+        
+       
+    });
+    
+    let result = openletter.join('');
+
+    console.log(`${result}`);
+}
+isIpValid();
+    </script>
+</body>
+</html>

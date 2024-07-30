@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+
+        function isPalindrome() { 
+            let slovo1 = prompt(" введите слово полиндром");
+
+            let slovo = slovo1.replace(/\s/g, "").toLowerCase(); 
+         
+             let reverslovo = slovo.split("").reverse().join(""); 
+             if (slovo === reverslovo) { 
+                console.log("true"); 
+            } else { 
+                console.log("false"); 
+            } 
+        } 
+isPalindrome();
+    </script>
+</body>
+</html>

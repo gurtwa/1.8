@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function getPower() {
+    let number = prompt("Введите число , которое является двойкой в какой-то степени чтобы узнать эту степень");
+    
+    if (number % 2 ===0 && number > 0){
+    let i = 0;
+        while (number !== 1) {
+            number /= 2;
+            i++;
+        }
+        console.log(i);
+}
+else {
+    console.log(" вы ввели неверное число")
+}}
+getPower();
+    </script>
+</body>
+</html>

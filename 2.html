@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function checkTicket() {
+let TicketValue=prompt("Введите номер своего билета:");
+
+if (TicketValue.length !== 6 )
+{
+    console.log("номер билета не верный")
+}
+else{
+const firstThreeDigits = parseInt(TicketValue.slice(0, 3),10);
+const lastThreeDigits = parseInt(TicketValue.slice(-3),10);
+   if(firstThreeDigits===lastThreeDigits){
+    console.log("Поздравляем! Вам выпал счастливый билет");
+   }
+else {
+console.log("Не повезло, вы ничего не выиграли");
+}
+}
+}
+checkTicket();
+    </script>
+</body>
+</html>

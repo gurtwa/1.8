@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+ function union() {
+            let unionOne = prompt("Введите значения первого массива, разделенные запятыми:");
+            let unionTwo = prompt("Введите значения второго массива, разделенные запятыми:");
+            let unionOneArray = unionOne.split(',').map(function(item) {
+                return parseFloat(item.trim());
+            });
+            let unionTwoArray = unionTwo.split(',').map(function(item) {
+                return parseFloat(item.trim());
+            });
+            let unionTotal = unionOneArray.concat(unionTwoArray);
+            unionTotal.sort(function(a, b) {
+                return a - b;
+            });
+            console.log(unionTotal);
+        union();
+ }
+    </script>
+</body>
+</html>

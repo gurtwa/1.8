@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function decrypt() {
+    let alfavit = [
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'Q', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+    ];
+    
+    let secret = prompt("введите сообщение");
+    
+    let letter = secret.split('');
+    
+    const openletter = letter.map(function(char) {
+        let index = alfavit.indexOf(char);
+        if (index !== -1) {
+            return alfavit[(index + 1) % alfavit.length]; 
+        }
+        return char;
+    });
+    
+    let result = openletter.join('');
+
+    console.log(`${result}`);
+}
+ decrypt();
+    </script>
+</body>
+</html>

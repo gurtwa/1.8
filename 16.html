@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+function sortTimestamps(list) {
+    function timeToSeconds(time) {
+        const [hours, minutes, seconds] = time.split(':').map(Number);
+        return hours * 3600 + minutes * 60 + seconds;
+    }
+
+    return list
+        .map(time => ({ time, seconds: timeToSeconds(time) }))
+        .sort((a, b) => a.seconds - b.seconds)
+        .map(item => item.time);
+}
+function getTimestampsAndSort() {
+
+    const input = prompt('Введите временные метки через запятую (например, 23:02:59, 02:07:00):');
+    if (input) {
+        const timestamps = input.split(',').map(time => time.trim());
+        const sortedTimestamps = sortTimestamps(timestamps);
+        console.log('Отсортированные временные метки:', sortedTimestamps);
+    } else {
+        console.log('Ввод не был предоставлен.');
+    }
+}
+getTimestampsAndSort();
+    </script>
+</body>
+</html>
